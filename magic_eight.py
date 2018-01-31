@@ -14,3 +14,11 @@ def random_answer():
 
     picked_answer = random.choice(answers)
     return picked_answer
+
+question = ""
+while question != "quit":
+    question = Question()
+    if question[-1] != "?":
+        print("I’m sorry, I can only answer questions.")
+    else:
+        print(random_answer())
