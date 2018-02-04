@@ -1,4 +1,6 @@
 import random
+import sys
+
 def Question():
     question = input("What is your question?" )
     return question
@@ -15,10 +17,16 @@ def random_answer():
     picked_answer = random.choice(answers)
     return picked_answer
 
+
 question = ""
+if question == "quit":
+    sys.exit()
+
 while question != "quit":
     question = Question()
-    if question[-1] != "?":
+    if question[-1] != "?" and question != "quit":
         print("I’m sorry, I can only answer questions.")
+    elif question == "quit":
+        sys.exit()
     else:
         print(random_answer())
